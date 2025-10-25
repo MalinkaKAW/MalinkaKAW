@@ -277,41 +277,7 @@
 <br/>
 
 <!-- Footer -->
-<div align="center">
-  
-  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=25&pause=1000&color=FF006E&center=true&vCenter=true&width=800&lines=Thanks+for+visiting!+✨;Feel+free+to+explore+my+repositories;Let's+build+something+amazing+together!+🚀;Happy+Coding!+💻" alt="Footer Animation" />
 
-</div>
 
-<br/>
 
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=gradient&customColorList=0,2,6,12,20&section=footer" />
-</div>
-name: Generate Snake
 
-on:
-  schedule:
-    - cron: "0 */12 * * *"
-  workflow_dispatch:
-  push:
-    branches:
-      - main
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: malinkakaw
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-      - uses: crazy-max/ghaction-github-pages@v3.1.0
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
